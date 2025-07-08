@@ -28,8 +28,12 @@ kiselnaya-menu/
 
 1. **Клонируйте репозиторий:**
    ```sh
+<<<<<<< HEAD
    git clone https://github.com/ВАШ_ЛОГИН/ВАШ_РЕПОЗИТОРИЙ.git
    cd kiselnaya-menu
+=======
+   git clone https://github.com/scrashm/kiselnaya.git
+>>>>>>> 285bf1d26aa981b4ab321fd56f4eacdb9d5b1921
    ```
 2. **Установите зависимости:**
    ```sh
@@ -97,4 +101,8 @@ kiselnaya-menu/
 
 ---
 
+<<<<<<< HEAD
 **Проект создан с любовью к традициям и современному веб-дизайну!** 
+=======
+**Проект создан с любовью к традициям и современному веб-дизайну!** 
+>>>>>>> 285bf1d26aa981b4ab321fd56f4eacdb9d5b1921
