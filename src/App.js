@@ -8,8 +8,8 @@ const menu = [
       { name: "Вишнёвый кисель", description: "Яркий и насыщенный, как лето.", price: "150₽" },
       { name: "Клюквенный кисель", description: "Традиционный вкус, любимый с детства.", price: "150₽" },
       { name: "Молочный кисель", description: "Нежный и сливочный.", price: "140₽" },
-      { name: "Яблочный кисель", description: "Свежий и ароматный яблочный вкус.", price: "150₽" },
-      { name: "Черничный кисель", description: "Нежный и насыщенный черничный вкус.", price: "150₽" },
+      { name: "Яблочный кисель", description: "Свежий и ароматный яблочный вкус.", price: "170₽" },
+      { name: "Черничный кисель", description: "Нежный и насыщенный черничный вкус.", price: "190₽" },
     ],
   },
   {
@@ -195,30 +195,34 @@ function App() {
         <section id="about" className="about-section about-two-columns">
           <div className="about-block about-history">
             <h2>Наша история</h2>
-            <p className="about-history-text">Кафе "Кафе кисельная" было основано с любовью к старинным русским традициям и желанием поделиться этим уникальным напитком с современным миром. Мы используем только свежие ягоды, фрукты и натуральные ингредиенты, чтобы каждый кисель был не только вкусным, но и полезным. Приглашаем вас в мир тепла, уюта и незабываемых вкусов!<br/><br/>Наше кафе — это место, где традиции встречаются с инновациями, создавая уникальный опыт для каждого гостя. Мы гордимся нашим меню и искренне верим, что кисель может быть современным и захватывающим напитком.</p>
+            <p className="about-history-text">Кафе "Кисельная" было основано с любовью к старинным русским традициям и желанием поделиться этим уникальным напитком с современным миром. Мы используем только свежие ягоды, фрукты и натуральные ингредиенты, чтобы каждый кисель был не только вкусным, но и полезным. Приглашаем вас в мир тепла, уюта и незабываемых вкусов!<br/><br/>Наше кафе — это место, где традиции встречаются с инновациями, создавая уникальный опыт для каждого гостя. Мы гордимся нашим меню и искренне верим, что кисель может быть современным и захватывающим напитком.</p>
           </div>
           <div className="about-block about-reviews">
             <h3>Отзывы наших гостей</h3>
             <div className="reviews-grid">
               <div className="review-column">
+                <div className="review-avatar"></div>
                 <div className="review-text">"Спасибо папаша."</div>
                 <div className="review-stars">★★★★★</div>
-                <div className="review-user">— Анна</div>
+                <div className="review-user">— Вадик</div>
               </div>
               <div className="review-column">
+                <div className="review-avatar"></div>
                 <div className="review-text">"Кисельная моя любовь и в каждом окне<br/>Солдаты трущоб улыбаются мне"</div>
                 <div className="review-stars">★★★★★</div>
-                <div className="review-user">— Дмитрий</div>
+                <div className="review-user">— Маргарин</div>
               </div>
               <div className="review-column">
+                <div className="review-avatar"><img src="/отзыв3.png" alt="Аватар Мария" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover', objectPosition: '60% 50%'}} /></div>
                 <div className="review-text">"Кчау."</div>
                 <div className="review-stars">★★★★★</div>
-                <div className="review-user">— Мария</div>
+                <div className="review-user">— Ондрей</div>
               </div>
               <div className="review-column">
+                <div className="review-avatar"><img src="/отзыв4.png" alt="Аватар Птица" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover'}} /></div>
                 <div className="review-text">"Синица,но без пива"</div>
                 <div className="review-stars">★★★★★</div>
-                <div className="review-user">— Алексей</div>
+                <div className="review-user">— Птица</div>
               </div>
             </div>
           </div>

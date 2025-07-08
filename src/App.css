@@ -533,3 +533,13 @@ html {
   margin-top: auto;
   align-self: flex-end;
 }
+
+.review-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f3e9e1;
+  margin: 0 auto 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: block;
+}
