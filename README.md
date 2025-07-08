@@ -29,7 +29,6 @@ kiselnaya-menu/
 1. **Клонируйте репозиторий:**
    ```sh
    git clone https://github.com/scrashm/kiselnaya.git
-   cd kiselnaya-menu
    ```
 2. **Установите зависимости:**
    ```sh
