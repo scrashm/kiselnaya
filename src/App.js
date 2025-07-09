@@ -26,7 +26,7 @@ const menu = [
     category: "Дополнения",
     items: [
       { name: "Пирожки с начинками", description: "Свежая выпечка к вашему напитку.", price: "70₽" },
-      { name: "Круассаны", description: "Хрустящие и ароматные.", price: "90₽" },
+      { name: "Круассаны", description: "Хрустящие и ароматные.", price: "90₽", image: "круассаны.png" },
       { name: "Мороженое с киселём", description: "Освежающее лакомство.", price: "120₽" },
       { name: "Травяной чай", description: "Ароматный и натуральный.", price: "100₽" },
       { name: "Домашний компот", description: "Освежающий напиток.", price: "100₽" },
@@ -69,7 +69,7 @@ function App() {
       </nav>
       <header className="App-header" id="home">
         <h1 className="kiselnaya-title">Кисельная</h1>
-        <p>Откройте для себя традиционные вкусы и авторские рецепты в уютной атмосфере!</p>
+        <p className="kiselnaya-subtitle">Откройте для себя традиционные вкусы и авторские рецепты в уютной атмосфере!</p>
         <div className="contacts-block">
           <div className="contact-item">
             <h4>Наш адрес</h4>
@@ -83,13 +83,17 @@ function App() {
           </div>
           <div className="contact-item">
             <h4>Свяжитесь с нами</h4>
-            <p>+7 (952) 591-87-21<br/>kiselnaya-lip@cafe.ru</p>
+            <p>+7 (952) 591-87-21<br/>kiselnaya-lip@cafe.ru<br/>
+              <a href="https://t.me/Kisel_lip_bot" target="_blank" rel="noopener noreferrer">@Kisel_lip_bot (Telegram)</a>
+            </p>
             <div className="contact-subtext">Звоните или пишите — всегда рады!</div>
           </div>
         </div>
       </header>
       <main>
-        <h2 id="menu">Меню</h2>
+        <div className="menu-title-block">
+          <h2 id="menu">Меню</h2>
+        </div>
         {/* Классические кисели */}
         {menu
           .filter(section => section.category === "Классические кисели")
@@ -173,12 +177,12 @@ function App() {
                 {section.items.map(item => (
                   <li key={item.name} className={"menu-item" + (section.category === "Дополнения" ? " addition-menu-item" : "") }>
                     <img
-                      src={`/${item.name}.jpg`}
+                      src={item.image ? item.image : `/${item.name}.jpg`}
                       alt={item.name}
                       className="menu-img"
                       onError={e => {
                         e.target.onerror = null;
-                        e.target.src = `/${item.name}.jpeg`;
+                        e.target.src = item.image ? item.image : `/${item.name}.jpeg`;
                       }}
                     />
                     <div>
@@ -194,35 +198,37 @@ function App() {
         {/* Блок 'О нас' в конце страницы */}
         <section id="about" className="about-section about-two-columns">
           <div className="about-block about-history">
-            <h2>Наша история</h2>
-            <p className="about-history-text">Кафе "Кисельная" было основано с любовью к старинным русским традициям и желанием поделиться этим уникальным напитком с современным миром. Мы используем только свежие ягоды, фрукты и натуральные ингредиенты, чтобы каждый кисель был не только вкусным, но и полезным. Приглашаем вас в мир тепла, уюта и незабываемых вкусов!<br/><br/>Наше кафе — это место, где традиции встречаются с инновациями, создавая уникальный опыт для каждого гостя. Мы гордимся нашим меню и искренне верим, что кисель может быть современным и захватывающим напитком.</p>
+            <div className="about-history-block">
+              <h2>Наша история</h2>
+              <p className="about-history-text">Кафе "Кисельная" было основано с любовью к старинным русским традициям и желанием поделиться этим уникальным напитком с современным миром. Мы используем только свежие ягоды, фрукты и натуральные ингредиенты, чтобы каждый кисель был не только вкусным, но и полезным. Приглашаем вас в мир тепла, уюта и незабываемых вкусов!<br/><br/>Наше кафе — это место, где традиции встречаются с инновациями, создавая уникальный опыт для каждого гостя. Мы гордимся нашим меню и искренне верим, что кисель может быть современным и захватывающим напитком.</p>
+            </div>
           </div>
           <div className="about-block about-reviews">
             <h3>Отзывы наших гостей</h3>
             <div className="reviews-grid">
               <div className="review-column">
-                <div className="review-avatar"></div>
+                <div className="review-avatar"><img src="/отзыв1.png" alt="Аватар Вадик" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover', transform: 'scale(1.2)'}} /></div>
                 <div className="review-text">"Спасибо папаша."</div>
                 <div className="review-stars">★★★★★</div>
-                <div className="review-user">— Вадик</div>
+                <div className="review-user">Маргарин</div>
               </div>
               <div className="review-column">
-                <div className="review-avatar"></div>
+                <div className="review-avatar"><img src="/отзыв2.png" alt="Аватар Маргарин" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover', transform: 'scale(1.2)'}} /></div>
                 <div className="review-text">"Кисельная моя любовь и в каждом окне<br/>Солдаты трущоб улыбаются мне"</div>
                 <div className="review-stars">★★★★★</div>
-                <div className="review-user">— Маргарин</div>
+                <div className="review-user">Вадик</div>
               </div>
               <div className="review-column">
                 <div className="review-avatar"><img src="/отзыв3.png" alt="Аватар Мария" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover', objectPosition: '60% 50%'}} /></div>
                 <div className="review-text">"Кчау."</div>
                 <div className="review-stars">★★★★★</div>
-                <div className="review-user">— Ондрей</div>
+                <div className="review-user">Ондрей</div>
               </div>
               <div className="review-column">
                 <div className="review-avatar"><img src="/отзыв4.png" alt="Аватар Птица" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover'}} /></div>
                 <div className="review-text">"Синица,но без пива"</div>
                 <div className="review-stars">★★★★★</div>
-                <div className="review-user">— Птица</div>
+                <div className="review-user">Птица</div>
               </div>
             </div>
           </div>

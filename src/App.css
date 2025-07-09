@@ -8,28 +8,42 @@ html {
   body {
     margin: 0;
     font-family: 'Montserrat', Arial, sans-serif;
-    background: #eee6db;
     min-height: auto;
-    background-image: url('logo22.png');
-    background-size: auto;
-    background-position: center;
-    background-repeat: no-repeat;
   }
 
 .App {
+  position: relative;
   text-align: center;
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('фон11.png');
+  background-size: 256px 256px;
+  background-position: top left;
+  background-repeat: repeat;
+  z-index: 1;
+}
+.App::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
 
   .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 40px 18px 40px;
-    background: #fff8ee;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    padding: 6px 24px 6px 24px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, #e3e6db 60%, rgba(255,255,255,0) 100%);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(184,123,75,0.08);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -37,8 +51,8 @@ html {
   }
 
   .logo-img {
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 14px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   }
@@ -55,9 +69,10 @@ html {
     text-decoration: none;
     color: #b87b4b;
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1rem;
     letter-spacing: 0.5px;
     transition: color 0.2s;
+    padding: 4px 10px;
   }
 
   .nav-links a:hover {
@@ -111,9 +126,18 @@ html {
     letter-spacing: 1px;
   }
 
+  .menu-title-block {
+    background: rgba(255,255,255,0.7);
+    border-radius: 16px;
+    display: inline-block;
+    padding: 12px 36px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(184,123,75,0.08);
+  }
+
   .menu-section {
     margin-bottom: 40px;
-    background: #fff;
+    background: rgba(255,255,255,0.85);
     border-radius: 24px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     padding: 32px 24px 24px 24px;
@@ -343,14 +367,14 @@ html {
   }
 
   .footer {
-    background: #b87b4b;
-    color: #fff;
-    padding: 18px 0;
-    font-size: 1.08rem;
-    margin-top: auto;
-    letter-spacing: 0.5px;
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
+    font-size: 0.7rem;
+    padding: 2px 0;
+    background: rgba(255,255,255,0.6);
+    color: #7c6f5a;
+    box-shadow: 0 -2px 8px rgba(184,123,75,0.04);
+    min-height: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
   @media (max-width: 1200px) {
@@ -431,6 +455,19 @@ html {
   letter-spacing: 2px;
   margin-bottom: 10px;
   text-shadow: 0 2px 8px rgba(184,123,75,0.08);
+}
+
+.kiselnaya-subtitle {
+  color: #960e15 !important;
+  font-size: 2rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.7);
+  border-radius: 18px;
+  padding: 16px 32px;
+  margin-top: 180px;
+  margin-bottom: 10px;
+  display: inline-block;
+  box-shadow: 0 2px 12px rgba(184,123,75,0.08);
 }
 
 #worktime {
@@ -539,7 +576,58 @@ html {
   height: 64px;
   border-radius: 50%;
   background: #f3e9e1;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 18px auto;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   display: block;
+  overflow: hidden;
+}
+.review-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  transform: scale(1.2);
+}
+
+.side-photo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+.side-photo.left {
+  left: 0;
+  justify-content: flex-start;
+}
+.side-photo.right {
+  right: 0;
+  justify-content: flex-end;
+}
+.side-photo img {
+  height: 80vh;
+  object-fit: cover;
+  border-radius: 0 30px 30px 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  opacity: 0.95;
+}
+.side-photo.right img {
+  border-radius: 30px 0 0 30px;
+}
+@media (max-width: 900px) {
+  .side-photo { display: none; }
+}
+
+.about-history-block {
+  background: rgba(255,255,255,0.7);
+  border-radius: 18px;
+  padding: 28px 32px 24px 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(184,123,75,0.08);
+  display: inline-block;
+  max-width: 600px;
 }
